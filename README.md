@@ -45,10 +45,11 @@ Raw Data: No Payload
 
 ## Project Structure
 
+```text
 CodeAlpha_BasicNetworkSniffer/
-
 │
-|-sniff.py
-|-requirements.txt
-|-README.md
-|-.gitignore
+├── sniff.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
