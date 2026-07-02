@@ -46,6 +46,7 @@ Raw Data: No Payload
 ## Project Structure
 
 CodeAlpha_BasicNetworkSniffer/
+
 │
 |-sniff.py
 |-requirements.txt
