@@ -1,4 +1,5 @@
 from scapy.all import sniff, IP, UDP, TCP, ICMP, Raw
+import socket
 inr = 0
 def packet_Callback(packet):
     global inr
@@ -9,7 +10,14 @@ def packet_Callback(packet):
     if packet.haslayer(IP):
         print()
         print("Source IP:", packet[IP].src)
-        print("Destination IP:", packet[IP].dst)
+        dest_ip = packet[IP].dst
+        print("Destination IP:", dest_ip)
+        try:
+            print("Hostname: "+ socket.gethostbyaddr(dest_ip)[0])
+        except socket.herror:
+            print("Hostname: Unknown")
+
+
 
     if packet.haslayer(TCP):
         print()
