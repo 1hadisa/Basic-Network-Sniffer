@@ -1,8 +1,10 @@
 from scapy.all import sniff, IP, UDP, TCP, ICMP, Raw
-
+inr = 0
 def packet_Callback(packet):
+    global inr
+    inr += 1
     print("==========================================================")
-    print("Packet Received")
+    print("Packet #" + str(inr) + " Received")
 
     if packet.haslayer(IP):
         print()
@@ -20,6 +22,9 @@ def packet_Callback(packet):
     elif packet.haslayer(ICMP):
         print()
         print("Protocol: ICMP")
+    else:
+        print("  ")
+        print("Protocol: Other")
 
     if packet.haslayer(Raw):
         print()
