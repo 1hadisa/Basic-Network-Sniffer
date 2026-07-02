@@ -29,4 +29,4 @@ def packet_Callback(packet):
         print("Raw Data: No Payload")
 
 
-sniff(prn=packet_Callback, count=10)
+sniff(prn=packet_Callback, count=3)
